@@ -1,25 +1,39 @@
-const container = document.getElementById('container');
-let grindNumber = 16;
+
    // randomColor = Math.floor(Math.random()*16777215).toString(16);
-    
-for (let i = 0; i < grindNumber; i++) {
-    for (let j = 0; j < grindNumber; j++) {
+function makeBoard(gridNumber){
+let board = document.getElementById('container');
+let squares = board.querySelectorAll('div');
+squares.forEach((div) => div.remove());
+board.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+board.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
+for (let i = 0; i < gridNumber; i++) {
+    for (let j = 0; j < gridNumber; j++) {
         const div = document.createElement('div');
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = "black";
+        });
         div.style.backgroundColor = "blue";
         div.classList.add("grid");
         container.appendChild(div);
     }
 }
+}
+makeBoard(16);
 
-function changeSize(input) {
-    if (input < 2 || input > 100) {
-        grindNumber == input;
+function changeSize() {
+    let input = prompt("Insert a number between 2 and 100");
+    if (input >= 2 && input <= 100) {
+        makeBoard(input);
     }
     else {
         console.log("too many squares");
     }
 
 
+}
+
+function resetBoard() {
+    makeBoard(16);
 }
 
 
