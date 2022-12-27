@@ -8,11 +8,15 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-    
-    <div id="container"></div>
-    <div id="buttons">
-        <button id="reset">Reset</button>
-        <button id="containerSize" onclick="changeSize()">Change Size</button>
+    <div class="flex-container">
+        <div id="container"></div>
+        <div id="buttons">
+            <button id="reset" onclick="resetBoard()">Reset</button>
+            <button onclick="changeColor('black')">Black</button>
+            <button onclick="changeColor('white')">Eraser</button>
+            <button onclick="changeColor('random')">Random</button>
+            <button id="containerSize" onclick="changeSize()">Change Size</button>
+        </div>
     </div>
 
 
