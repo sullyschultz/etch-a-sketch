@@ -1,8 +1,7 @@
 #container {
     display: grid;
-    width: 560px;
-    height: 360px;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    width: 500px;
+    height: 500px;
     padding: 0;
     margin-left: 30%;
     border: solid black 2px;
@@ -10,9 +9,9 @@
 }
 
 #container > div {
-    min-width: 20px;
-    min-height:  20px;
+   
     border: solid black 1px;
 
 
 }
+
