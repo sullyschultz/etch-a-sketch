@@ -1,4 +1,4 @@
-
+let color = "black";
    // randomColor = Math.floor(Math.random()*16777215).toString(16);
 function makeBoard(gridNumber){
 let board = document.getElementById('container');
@@ -9,10 +9,8 @@ board.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
 for (let i = 0; i < gridNumber; i++) {
     for (let j = 0; j < gridNumber; j++) {
         const div = document.createElement('div');
-        div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = "black";
-        });
-        div.style.backgroundColor = "blue";
+        div.addEventListener('mouseover', squareColor);
+        div.style.backgroundColor = "white";
         div.classList.add("grid");
         container.appendChild(div);
     }
@@ -28,12 +26,25 @@ function changeSize() {
     else {
         console.log("too many squares");
     }
-
-
 }
 
 function resetBoard() {
     makeBoard(16);
+}
+
+function squareColor(){
+    if (color === 'random') { 
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+}
+    else {
+        this.style.backgroundColor = color;
+    }
+}
+
+
+function changeColor(choice) {
+    color = choice;
+
 }
 
 
